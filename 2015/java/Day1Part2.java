@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Day1Part2 extends Problem {
 
     public static void main(String[] args) {
@@ -6,7 +8,8 @@ public class Day1Part2 extends Problem {
     }
 
     public void solve() {
-        String input = getInputWithOnly('(', ')');
+        String input = getInputWithOnly(2015, 1, '(', ')').getFirst();
+
         int floor = 0;
         int position = 0;
 

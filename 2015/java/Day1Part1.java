@@ -6,7 +6,7 @@ public class Day1Part1 extends Problem {
     }
 
     public void solve() {
-        String input = getInputWithOnly('(', ')');
+        String input = getInputWithOnly(2015, 1, '(', ')').getFirst();
         int floor = 0;
 
         for (char c : input.toCharArray()) {
