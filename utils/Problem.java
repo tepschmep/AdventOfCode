@@ -1,4 +1,6 @@
-import java.util.Scanner;
+import java.nio.file.Path;
+import java.io.*;
+import java.util.*;
 
 public abstract class Problem {
 
@@ -7,19 +9,33 @@ public abstract class Problem {
     public abstract void solve();
 
     /* Utility methods to get problem inputs */
-    public String getInput() {
-        System.out.print("Provide the problem's input: ");
-        return SCANNER.nextLine();
+    public List<String> getInput(int year, int day) {
+        return getFilteredInput(year, day, "");
     }
 
-    public String getInputWithout(char... chars) {
+    public List<String> getInputWithout(int year, int day, char... chars) {
         String regex = "[" + String.valueOf(chars) + "]";
-        return getInput().replaceAll(regex, "");
+        return getFilteredInput(year, day, regex);
     }
 
-    public String getInputWithOnly(char... chars) {
+    public List<String> getInputWithOnly(int year, int day, char... chars) {
         String regex = "[^" + String.valueOf(chars) + "]";
-        return getInput().replaceAll(regex, "");
+        return getFilteredInput(year, day, regex);
+    }
+
+    private List<String> getFilteredInput(int year, int day, String regex) {
+        File file = Path.of(String.valueOf(year), "input", "Day" + day + ".txt").toAbsolutePath().toFile();
+        List<String> input = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNext()) {
+                String data = scanner.nextLine().replaceAll(regex, "");
+                input.add(data);
+            }
+            return input;
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException("File not found");
+        }
     }
 
 }
