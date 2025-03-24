@@ -3,4 +3,4 @@
 ---
 
 #### 2015:
-1. [ ] `2/50` solutions in **Java**
+1. [ ] `4/50` solutions in **Java** _(Days 1, 2)_
