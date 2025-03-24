@@ -4,9 +4,8 @@ import java.util.*;
 
 public abstract class Problem {
 
-    private static final Scanner SCANNER = new Scanner(System.in);
-
-    public abstract void solve();
+    public abstract void part1(List<String> input);
+    public abstract void part2(List<String> input);
 
     /* Utility methods to get problem inputs */
     public List<String> getInput(int year, int day) {
