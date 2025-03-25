@@ -5,3 +5,6 @@ out/
 
 # VSCode stuff
 .vscode/
+
+# Problem input folders
+input/
