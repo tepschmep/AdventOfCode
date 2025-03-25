@@ -25,7 +25,7 @@ public class Day3 extends Problem {
             }
         }
 
-        int result = grid.stream().filter(house -> house.presentCount >= 1).toList().size();
+        int result = grid.size();
 
         System.out.println(result + " houses receive at least one present.");
     }
@@ -48,7 +48,7 @@ public class Day3 extends Problem {
             }
         }
 
-        int result = grid.stream().filter(house -> house.presentCount >= 1).toList().size();
+        int result = grid.size();
 
         System.out.println(result + " houses receive at least one present.");
     }
