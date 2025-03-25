@@ -36,10 +36,11 @@ public class Day4 extends Problem {
     }
 
     public void findHashWithNZeroes(MessageDigest algorithm, int count, String input) {
-        String zeroes = "";
+        StringBuilder builder = new StringBuilder();
         for (int i = 0; i < count; i++) {
-            zeroes = zeroes.concat("0");
+            builder = builder.append(0);
         }
+        String zeroes = builder.toString();
 
         String hash = "";
         int num = 1;
